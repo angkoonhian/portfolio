@@ -1,4 +1,4 @@
-import React, { useRef, Suspense, useState } from "react";
+import React, { useRef, Suspense, useState, useEffect } from "react";
 // import { createShaderCanvas } from "react-shader-canvas";
 import * as THREE from "three";
 import { Canvas, extend, useFrame } from "@react-three/fiber";
@@ -8,7 +8,7 @@ import "./styles.css";
 import $ from "jquery";
 import "./nav.css";
 import { Row, Col, Card, Avatar } from "antd";
-import ScrollspyNav from "react-scrollspy-nav";
+// import ScrollspyNav from "react-scrollspy-nav";
 import Projects from "./projects";
 import Awards from "./award";
 import About from "./about";
@@ -58,23 +58,30 @@ const Scene = () => {
 };
 
 function Overlay() {
-  $(".navTrigger").click(function () {
-    $(this).toggleClass("active");
-    console.log("Clicked menu");
-    $("#mainListDiv").toggleClass("show_list");
-    $("#mainListDiv").fadeIn();
+  useEffect(function onFirstMount() {
+    $(".navTrigger").click(function () {
+      $(this).toggleClass("active");
+      console.log("Clicked menu");
+      $("#mainListDiv").toggleClass("show_list");
+      $("#mainListDiv").fadeIn();
+    });
+
+    // $(window).scroll(function () {
+    //   if ($(document).scrollTop() > $(window).height() * 0.3) {
+    //     $(".nav").addClass("affix");
+    //     $(".nav").css("opacity", $(document).scrollTop() / 500);
+    //     console.log("OK");
+    //   } else {
+    //     $(".nav").removeClass("affix");
+    //     $(".nav").css("opacity", 0);
+    //   }
+    // });
+
+    return function unMount() {
+      $(".navTrigger").off("click");
+    };
   });
 
-  $(window).scroll(function () {
-    if ($(document).scrollTop() > $(window).height() * 0.3) {
-      $(".nav").addClass("affix");
-      $(".nav").css("opacity", $(document).scrollTop() / 500);
-      console.log("OK");
-    } else {
-      $(".nav").removeClass("affix");
-      $(".nav").css("opacity", 0);
-    }
-  });
   return (
     <div class='container-fluid'>
       <nav
@@ -86,7 +93,7 @@ function Overlay() {
             <a href='#'>AKH</a>
           </div>
           <div id='mainListDiv' class='main_list'>
-            <ScrollspyNav
+            <nav
               scrollTargetIds={["About", "Direction", "Features", "Contact"]}
               currentClassName='is-current'
               // offset={-100}
@@ -112,9 +119,9 @@ function Overlay() {
                   <a href='#Contact'>Contact</a>
                 </li>
               </ul>
-            </ScrollspyNav>
+            </nav>
           </div>
-          <span class='navTrigger' style={{ paddingRight: "30px;" }}>
+          <span class='navTrigger' style={{ paddingRight: "30px" }}>
             <i></i>
             <i></i>
             <i></i>
