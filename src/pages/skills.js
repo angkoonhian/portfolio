@@ -24,6 +24,7 @@ import mongodb from "../images/skills/mongodb.svg";
 import graphql from "../images/skills/graphql.svg";
 import firebase from "../images/skills/firebase.svg";
 import django from "../images/skills/django.svg";
+import gaussdb from "../images/skills/GaussDB.svg";
 import { post } from "jquery";
 class Card extends React.Component {
   render() {
@@ -39,7 +40,7 @@ class Card extends React.Component {
 
 const Skills = () => {
   return (
-    <Row justify='space-around' style={{ marginBottom: "300px" }}>
+    <Row justify='space-around' style={{ position: "relative" }}>
       <div className='containerSkills'>
         <Col xl={{ span: 15 }} lg={{ span: 18 }} xs={{ span: 22 }}>
           <div className='card'>
@@ -188,9 +189,16 @@ const Skills = () => {
                 <Col xl={{ span: 2 }} lg={{ span: 4 }} xs={{ span: 10 }}>
                   <img
                     src={mongodb}
-                    style={{ height: "50px", width: "50px" }}
+                    style={{ height: "50px", width: "70px" }}
                   />
                   <p>MongoDB</p>
+                </Col>
+                <Col xl={{ span: 2 }} lg={{ span: 4 }} xs={{ span: 10 }}>
+                  <img
+                    src={gaussdb}
+                    style={{ height: "50px", width: "70px" }}
+                  />
+                  <p>GaussDB</p>
                 </Col>
                 <Col xl={{ span: 2 }} lg={{ span: 4 }} xs={{ span: 10 }}>
                   <img

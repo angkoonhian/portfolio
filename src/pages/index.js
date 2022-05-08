@@ -13,16 +13,17 @@ import Projects from "./projects";
 import Awards from "./award";
 import About from "./about";
 import Skills from "./skills";
+import Experiences from "./experience";
 import * as random from "maath/random/dist/maath-random.esm";
 
 function Stars(props) {
   const ref = useRef();
   const [sphere] = useState(() =>
-    random.inSphere(new Float32Array(10000), { radius: 1.5 })
+    random.inSphere(new Float32Array(300000), { radius: 0.7 })
   );
   useFrame((state, delta) => {
-    ref.current.rotation.x -= delta / 5;
-    ref.current.rotation.y -= delta / 8;
+    ref.current.rotation.x -= delta / 51;
+    ref.current.rotation.y -= delta / 118;
   });
   return (
     <group rotation={[0, 0, Math.PI / 4]}>
@@ -35,8 +36,9 @@ function Stars(props) {
       >
         <PointMaterial
           transparent
-          color='#A1C7C7'
-          size={0.005}
+          color='#77A8A3'
+          // color='#A1C7C7'
+          size={0.0005}
           sizeAttenuation={true}
           depthWrite={true}
         />
@@ -50,7 +52,13 @@ const Scene = () => {
   return (
     <Canvas
       camera={{ position: [0, 0, 1] }}
-      style={{ height: "100em", width: "100%", position: "absolute" }}
+      style={{
+        minHeight: "100vh",
+        height: "100%",
+        width: "100%",
+        position: "absolute",
+        backgroundAttachment: "fixed",
+      }}
     >
       <Stars />
     </Canvas>
@@ -83,7 +91,11 @@ function Overlay() {
   });
 
   return (
-    <div class='container-fluid'>
+    <div
+      class='container-fluid'
+      style={{ position: "relative", display: "block", overflowY: "auto" }}
+    >
+      <Scene />
       <nav
         class='nav fixed-top'
         style={{ left: "0px", right: "0px", margin: "0px" }}
@@ -116,7 +128,7 @@ function Overlay() {
                   <a href='#Contact'>Awards</a>
                 </li>
                 <li>
-                  <a href='#Contact'>Contact</a>
+                  <a href='#Contact'>Socials</a>
                 </li>
               </ul>
             </nav>
@@ -152,7 +164,17 @@ function Overlay() {
           >
             Ang Koon Hian.
           </h1>
-          <h3 style={{ color: "white" }}>A passionate software engineer</h3>
+          <h1
+            style={{
+              margin: 0,
+              padding: 0,
+              fontSize: "2em",
+              fontWeight: 400,
+              letterSpacing: "-0.05em",
+            }}
+          >
+            A passionate software engineer
+          </h1>
         </div>
         <div style={{ marginTop: "400px" }}>
           <h1 style={{ textAlign: "center", fontSize: "5em", fontWeight: 500 }}>
@@ -162,6 +184,7 @@ function Overlay() {
           <h1 style={{ textAlign: "center", fontSize: "5em", fontWeight: 500 }}>
             Experience
           </h1>
+          <Experiences></Experiences>
           <h1 style={{ textAlign: "center", fontSize: "5em", fontWeight: 500 }}>
             Projects
           </h1>
@@ -176,11 +199,9 @@ function Overlay() {
           <h1 style={{ textAlign: "center", fontSize: "5em", fontWeight: 500 }}>
             Awards
           </h1>
-          <div>
-            <Awards></Awards>
-          </div>
+          <Awards></Awards>
           <h1 style={{ textAlign: "center", fontSize: "5em", fontWeight: 500 }}>
-            Contact
+            Socials
           </h1>
         </div>
       </div>
@@ -190,8 +211,7 @@ function Overlay() {
 // markup
 const IndexPage = () => {
   return (
-    <main>
-      <Scene />
+    <main style={{ height: "100vh" }}>
       <div>
         <Overlay />
       </div>
