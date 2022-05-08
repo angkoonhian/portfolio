@@ -57,6 +57,14 @@ Creative Idea)'
 preferences and is powered by machine learning with huawei cloud services.'
           />
         </Col>
+        <Col xl={{ span: 8 }} lg={{ span: 10 }} xs={{ span: 20 }}>
+          <Card
+            title='NUS Venture Initiation Program@SOC awardee ($10,000)'
+            bgc='#fcd000'
+            content='Developed an itinerary generator that works based on your personal
+preferences and is powered by machine learning with huawei cloud services.'
+          />
+        </Col>
       </div>
     </Row>
   );

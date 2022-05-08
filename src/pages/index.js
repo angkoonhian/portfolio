@@ -7,22 +7,27 @@ import glsl from "babel-plugin-glsl/macro";
 import "./styles.css";
 import $ from "jquery";
 import "./nav.css";
-import { Row, Col, Card, Avatar } from "antd";
+import { Row, Col, Card, Avatar, Button } from "antd";
 // import ScrollspyNav from "react-scrollspy-nav";
 import Projects from "./projects";
 import Awards from "./award";
 import About from "./about";
+import { DownloadOutlined } from "@ant-design/icons";
 import Skills from "./skills";
+import github from "../images/github.svg";
 import Experiences from "./experience";
+import linkedin from "../images/linkedin.svg";
+import medium from "../images/medium.svg";
+import angkoonhian from "../../angkoonhian.pdf";
 import * as random from "maath/random/dist/maath-random.esm";
 
 function Stars(props) {
   const ref = useRef();
   const [sphere] = useState(() =>
-    random.inSphere(new Float32Array(300000), { radius: 0.7 })
+    random.inSphere(new Float32Array(500000), { radius: 0.8 })
   );
   useFrame((state, delta) => {
-    ref.current.rotation.x -= delta / 51;
+    ref.current.rotation.x -= delta / 151;
     ref.current.rotation.y -= delta / 118;
   });
   return (
@@ -38,7 +43,7 @@ function Stars(props) {
           transparent
           color='#77A8A3'
           // color='#A1C7C7'
-          size={0.0005}
+          size={0.0004}
           sizeAttenuation={true}
           depthWrite={true}
         />
@@ -53,11 +58,8 @@ const Scene = () => {
     <Canvas
       camera={{ position: [0, 0, 1] }}
       style={{
-        minHeight: "100vh",
-        height: "100%",
         width: "100%",
         position: "absolute",
-        backgroundAttachment: "fixed",
       }}
     >
       <Stars />
@@ -130,6 +132,11 @@ function Overlay() {
                 <li>
                   <a href='#Contact'>Socials</a>
                 </li>
+                <li>
+                  <a href={angkoonhian} download='AngKoonHian.pdf'>
+                    Resume
+                  </a>
+                </li>
               </ul>
             </nav>
           </div>
@@ -185,24 +192,91 @@ function Overlay() {
             Experience
           </h1>
           <Experiences></Experiences>
-          <h1 style={{ textAlign: "center", fontSize: "5em", fontWeight: 500 }}>
+          <h1
+            style={{
+              textAlign: "center",
+              fontSize: "5em",
+              fontWeight: 500,
+              paddingTop: "100px",
+            }}
+          >
             Projects
           </h1>
           <div>
             <Projects></Projects>
           </div>
 
-          <h1 style={{ textAlign: "center", fontSize: "5em", fontWeight: 500 }}>
+          <h1
+            style={{
+              textAlign: "center",
+              fontSize: "5em",
+              fontWeight: 500,
+              paddingTop: "100px",
+            }}
+          >
             Skills
           </h1>
           <Skills></Skills>
-          <h1 style={{ textAlign: "center", fontSize: "5em", fontWeight: 500 }}>
+          <h1
+            style={{
+              textAlign: "center",
+              fontSize: "5em",
+              fontWeight: 500,
+              paddingTop: "100px",
+            }}
+          >
             Awards
           </h1>
           <Awards></Awards>
-          <h1 style={{ textAlign: "center", fontSize: "5em", fontWeight: 500 }}>
+          <h1
+            style={{
+              textAlign: "center",
+              fontSize: "5em",
+              fontWeight: 500,
+              paddingTop: "100px",
+            }}
+          >
             Socials
           </h1>
+
+          <Row justify='center' gutter={48} style={{ marginBottom: "100px" }}>
+            <Col span={1}>
+              <a
+                href='https://github.com/angkoonhian'
+                alt='https://github.com/angkoonhian'
+              >
+                <img
+                  style={{ width: "50px", height: "auto" }}
+                  src={github}
+                  alt='github'
+                />
+              </a>
+            </Col>
+            <Col span={1}>
+              <a
+                href='https://www.linkedin.com/in/ang-koon-hian-0005a2101/'
+                alt='https://www.linkedin.com/in/ang-koon-hian-0005a2101/'
+              >
+                <img
+                  style={{ width: "50px", height: "auto" }}
+                  src={linkedin}
+                  alt='github'
+                />
+              </a>
+            </Col>
+            <Col span={1}>
+              <a
+                href='https://medium.com/@angkoonhian'
+                alt='https://medium.com/@angkoonhian'
+              >
+                <img
+                  style={{ width: "50px", height: "auto" }}
+                  src={medium}
+                  alt='github'
+                />
+              </a>
+            </Col>
+          </Row>
         </div>
       </div>
     </div>

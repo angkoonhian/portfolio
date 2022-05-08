@@ -33,6 +33,8 @@ import graphql from "../images/skills/graphql.svg";
 import firebase from "../images/skills/firebase.svg";
 import gaussdb from "../images/skills/GaussDB.svg";
 import django from "../images/skills/django.svg";
+import github from "../images/github.svg";
+import easytrading from "../images/easytrading.png";
 
 const Projects = () => {
   const { Meta } = Card;
@@ -56,15 +58,31 @@ const Projects = () => {
             />
           }
           actions={[
-            <SettingOutlined key='setting' />,
-            <EditOutlined key='edit' />,
-            <EllipsisOutlined key='ellipsis' />,
+            <a
+              style={{
+                color: "black",
+              }}
+              alt='https://github.com/angkoonhian/BuildConnectMain'
+              href='https://github.com/angkoonhian/BuildConnectMain'
+            >
+              <img
+                src={github}
+                style={{
+                  marginTop: "10px",
+                  marginBottom: "10px",
+                  marginRight: "5px",
+                }}
+              ></img>
+              {"  "}
+              View Code on Github!
+            </a>,
           ]}
         >
           <Meta
             title='Contrannect'
             description='Contrannect is a Singapore-based construction network that aims to connect contractors in Singapore, digitising the construction industry. It is designed to aid sourcing for construction work, making it more accessible for all players and increasing competitiveness.'
           />
+
           <br></br>
           <p style={{ fontWeight: "bold" }}>Tech Stack</p>
           <Row gutter={10} justify='space-around'>
@@ -107,9 +125,24 @@ const Projects = () => {
             />
           }
           actions={[
-            <SettingOutlined key='setting' />,
-            <EditOutlined key='edit' />,
-            <EllipsisOutlined key='ellipsis' />,
+            <a
+              style={{
+                color: "black",
+              }}
+              alt='https://github.com/angkoonhian/Orbital-relish'
+              href='https://github.com/angkoonhian/Orbital-relish'
+            >
+              <img
+                src={github}
+                style={{
+                  marginTop: "10px",
+                  marginBottom: "10px",
+                  marginRight: "5px",
+                }}
+              ></img>
+              {"  "}
+              View Code on Github!
+            </a>,
           ]}
         >
           <Meta
@@ -155,9 +188,22 @@ const Projects = () => {
             />
           }
           actions={[
-            <SettingOutlined key='setting' />,
-            <EditOutlined key='edit' />,
-            <EllipsisOutlined key='ellipsis' />,
+            <a
+              style={{
+                color: "black",
+              }}
+            >
+              <img
+                src={github}
+                style={{
+                  marginTop: "10px",
+                  marginBottom: "10px",
+                  marginRight: "5px",
+                }}
+              ></img>
+              {"  "}
+              View Code on Github!
+            </a>,
           ]}
         >
           <Meta
@@ -206,9 +252,24 @@ const Projects = () => {
             />
           }
           actions={[
-            <SettingOutlined key='setting' />,
-            <EditOutlined key='edit' />,
-            <EllipsisOutlined key='ellipsis' />,
+            <a
+              style={{
+                color: "black",
+              }}
+              alt='https://github.com/angkoonhian/kampong-backend'
+              href='https://github.com/angkoonhian/kampong-backend'
+            >
+              <img
+                src={github}
+                style={{
+                  marginTop: "10px",
+                  marginBottom: "10px",
+                  marginRight: "5px",
+                }}
+              ></img>
+              {"  "}
+              View Code on Github!
+            </a>,
           ]}
         >
           <Meta
@@ -261,9 +322,24 @@ const Projects = () => {
             />
           }
           actions={[
-            <SettingOutlined key='setting' />,
-            <EditOutlined key='edit' />,
-            <EllipsisOutlined key='ellipsis' />,
+            <a
+              style={{
+                color: "black",
+              }}
+              alt='https://github.com/angkoonhian/huawei-reisen'
+              href='https://github.com/angkoonhian/huawei-reisen'
+            >
+              <img
+                src={github}
+                style={{
+                  marginTop: "10px",
+                  marginBottom: "10px",
+                  marginRight: "5px",
+                }}
+              ></img>
+              {"  "}
+              View Code on Github!
+            </a>,
           ]}
         >
           <Meta
@@ -309,9 +385,24 @@ const Projects = () => {
             />
           }
           actions={[
-            <SettingOutlined key='setting' />,
-            <EditOutlined key='edit' />,
-            <EllipsisOutlined key='ellipsis' />,
+            <a
+              style={{
+                color: "black",
+              }}
+              alt='https://github.com/angkoonhian/brainhack2021-teleconsult-backend'
+              href='https://github.com/angkoonhian/brainhack2021-teleconsult-backend'
+            >
+              <img
+                src={github}
+                style={{
+                  marginTop: "10px",
+                  marginBottom: "10px",
+                  marginRight: "5px",
+                }}
+              ></img>
+              {"  "}
+              View Code on Github!
+            </a>,
           ]}
         >
           <Meta
@@ -362,9 +453,24 @@ Allows clinics to easily manage and inform patients about ongoing queue situatio
             />
           }
           actions={[
-            <SettingOutlined key='setting' />,
-            <EditOutlined key='edit' />,
-            <EllipsisOutlined key='ellipsis' />,
+            <a
+              style={{
+                color: "black",
+              }}
+              alt='https://github.com/angkoonhian/hacknroll-ChatWithSamuel'
+              href='https://github.com/angkoonhian/hacknroll-ChatWithSamuel'
+            >
+              <img
+                src={github}
+                style={{
+                  marginTop: "10px",
+                  marginBottom: "10px",
+                  marginRight: "5px",
+                }}
+              ></img>
+              {"  "}
+              View Code on Github!
+            </a>,
           ]}
         >
           <Meta
@@ -406,38 +512,55 @@ Allows clinics to easily manage and inform patients about ongoing queue situatio
               height='200px'
               style={{ objectFit: "cover" }}
               alt='example'
-              src={sb2j}
+              src={easytrading}
             />
           }
           actions={[
-            <SettingOutlined key='setting' />,
-            <EditOutlined key='edit' />,
-            <EllipsisOutlined key='ellipsis' />,
+            <a
+              style={{
+                color: "black",
+              }}
+              alt='https://github.com/angkoonhian/BT3103-easyTrading'
+              href='https://github.com/angkoonhian/BT3103-easyTrading'
+            >
+              <img
+                src={github}
+                style={{
+                  marginTop: "10px",
+                  marginBottom: "10px",
+                  marginRight: "5px",
+                }}
+              ></img>
+              {"  "}
+              View Code on Github!
+            </a>,
           ]}
         >
           <Meta
-            title='SB2J'
-            description='How often do you hear people say “I want to start investing but I am afraid of the risk and losing all my money”. Im sure you have heard this from the people around you or maybe you are this person yourself. And I’m sure some advice you have heard advice like “Just buy an ETF!” 
-
-This forms the fundamental idea for our solution, to develop a platform to buy and sell ETF-version for NFTs, which we will term as ETNFT. 
+            title='Easy Trading'
+            description='A platform to match buyers and sellers and facilitate the purchase/renting/trading of unwanted items through a website that allows sellers to list their underutilized/unwanted items and buyers to browse through them via an easy-to-use and aesthetically pleasing user interface. Buyers and sellers will be able to message each other within the website to negotiate a deal and leave reviews and ratings
 '
           />
           <br></br>
+          <p>
+            Website:{" "}
+            <a href='https://bt3103-finalproject.web.app/'>
+              https://bt3103-finalproject.web.app/
+            </a>
+          </p>
+          <br></br>
           <p style={{ fontWeight: "bold" }}>Tech Stack</p>
           <Row gutter={10} justify='space-around'>
-            <Col span={4}>
-              <img src='https://img.icons8.com/officel/32/000000/react.png' />
+            <Col span={5}>
+              <img style={{ height: "35px", width: "50px" }} src={github} />
             </Col>
-            <Col span={4}>
-              <img src='https://img.icons8.com/color/32/000000/redux.png' />
+            <Col span={5}>
+              <img style={{ height: "35px", width: "50px" }} src={vue} />
             </Col>
-            <Col span={4}>
-              <img style={{ height: "40px", width: "50px" }} src={nestjs} />
+            <Col span={5}>
+              <img style={{ height: "35px", width: "50px" }} src={firebase} />
             </Col>
-            <Col span={4}>
-              <img style={{ height: "40px", width: "40px" }} src={graphql} />
-            </Col>
-            <Col span={4}>
+            <Col span={5}>
               <img style={{ height: "40px", width: "60px" }} src={mongodb} />
             </Col>
           </Row>
